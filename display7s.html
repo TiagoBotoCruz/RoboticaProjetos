@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7segmentos</title>
+    <style>
+        #display1{
+            position: absolute;
+        }
+        #leda,#ledd,#ledg{
+            width: 100px;
+            height: 20px;
+            border-radius: 20%;
+            border: 1px black solid;
+            text-align: center;
+        }
+        #ledb,#ledc,#lede,#ledf{
+            width: 20px;
+            height: 100px;
+            border-radius: 20%;
+            border: 1px black solid;
+            text-align: center;
+        }
+        #leda,#ledd{
+            position: relative;
+            top: 0;
+            left: 20px;
+        }
+        #ledb,#ledc{
+            position: relative;
+            top: 0;
+            left: 120px;
+        }
+        #lede,#ledf{
+            position: relative;
+            top: -220px;
+            left: 0;
+        }
+        #ledg{
+            position: relative;
+            top: -330px;
+            left: 20px;
+        }
+        .branco{
+            background-color: black;
+            color: white;
+        }
+        .vermelho{
+            color: red;
+        }
+        .clicadoBranco{
+            background-color: whitesmoke;
+        }
+        .clicadoVermelho{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>O display de 7 segmentos possui 8 leds vermelhos, eles escrevem números e algumas letras, são utilizados em automação, robótica e no dia-a-dia.</p>
+    <p>possui leds em ordem a,b,c,d,e,f,g</p>
+    Cor: <input type="radio" name="cor" id="branco">
+    <label for="branco">Branco</label>
+    <input type="radio" name="cor" id="vermelho">
+    <label for="vermelho">Vermelho</label>
+    <h2>Forme o número <span class="numero"></span></h2>
+    <div id="display1">
+     <div id="leda">a</div>
+     <div id="ledb">b</div>
+     <div id="ledc">c</div>
+     <div id="ledd">d</div>
+     <div id="lede">e</div>
+     <div id="ledf">f</div>
+     <div id="ledg">g</div>
+    </div>
+    <script>
+        var numero = document.getElementsByClassName('numero');
+        const algarismos = [0,1,2,3,4,5,6,7,8,9];
+        var leda = document.getElementById('leda');
+        var ledb = document.getElementById('ledb');
+        var ledc = document.getElementById('ledc');
+        var ledd = document.getElementById('ledd');
+        var lede = document.getElementById('lede');
+        var ledf = document.getElementById('ledf');
+        var ledg = document.getElementById('ledg');
+        var leda_status,ledb_status,ledc_status,ledd_status,lede_status,ledf_status,ledg_status = false;
+
+        var cor = document.getElementsByName('cor');
+        
+        if(cor.value == 'branco'){
+            alert("Branco");
+        }else if(cor.value == 'vermelho'){
+            alert("Vermelho");
+        }
+
+        leda.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            leda_status = true;
+            }
+          });
+        
+        ledb.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            ledb_status = true;
+            }
+          });
+        ledc.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            ledc_status = true;
+            }
+          });
+        ledd.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            ledd_status = true;
+            }
+          });
+        lede.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            lede_status = true;
+            }
+          });
+        ledf.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            ledf_status = true;
+            }
+          });
+        ledg.addEventListener("click",function(event){
+          if(event.target.tagName === "DIV"){
+            event.target.classList.toggle("clicadoVermelho");
+            ledg_status = true;
+            }
+          });
+    </script>
+</body>
+</html>
